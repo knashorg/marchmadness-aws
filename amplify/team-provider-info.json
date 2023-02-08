@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-marchmadnessaws-dev-113639-authRole",
+      "UnauthRoleArn": "arn:aws:iam::909356151134:role/amplify-marchmadnessaws-dev-113639-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::909356151134:role/amplify-marchmadnessaws-dev-113639-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-marchmadnessaws-dev-113639-deployment",
+      "UnauthRoleName": "amplify-marchmadnessaws-dev-113639-unauthRole",
+      "StackName": "amplify-marchmadnessaws-dev-113639",
+      "StackId": "arn:aws:cloudformation:us-east-1:909356151134:stack/amplify-marchmadnessaws-dev-113639/c3ee2860-a7ce-11ed-a13e-12447c80f821",
+      "AmplifyAppId": "d28o6viprq8vmg"
+    },
+    "categories": {
+      "api": {
+        "marchmadnessaws": {}
+      },
+      "auth": {
+        "marchmadnessawsfb4ce0b0": {}
+      }
+    }
+  }
+}
