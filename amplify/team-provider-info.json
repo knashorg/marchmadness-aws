@@ -17,6 +17,12 @@
       },
       "auth": {
         "marchmadnessawsfb4ce0b0": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d28o6viprq8vmg",
+          "type": "cicd"
+        }
       }
     }
   }
