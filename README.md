@@ -3,7 +3,7 @@
 Here are some commands that you may want to run frequently:\
 `amplify pull` - Gets backend data from Amplify.\
 `amplify codegen models` - Generates model files from amplify for use in development.\
-`npm start` - Starts the development server.\
+`npm start` - Starts the development server.
 
 
 # Getting Started with Create React App
