@@ -29,6 +29,7 @@ const App = ({ signOut, user }) => {
       const todos = todoData.data.listTodos.items
       setTodos(todos)
     } catch (err) { console.log('error fetching todos') }
+    
   }
 
   async function addTodo() {
@@ -41,9 +42,11 @@ const App = ({ signOut, user }) => {
     } catch (err) {
       console.log('error creating todo:', err)
     }
+    
   }
 
   return (
+    <ThemeProvider theme={studioTheme}>
     <div style={styles.container}>
       <Heading level={1}>Hello {user.username}</Heading>
       <Button onClick={signOut} style={styles.button}>Sign out</Button>
@@ -70,6 +73,7 @@ const App = ({ signOut, user }) => {
         ))
       }
     </div>
+    </ThemeProvider>
   )
 }
 

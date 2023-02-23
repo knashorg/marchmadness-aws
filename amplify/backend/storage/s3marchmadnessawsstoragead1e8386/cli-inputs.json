@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3marchmadnessawsstoragead1e8386",
+  "bucketName": "marchmadnessaws-storage-ad1e8386",
+  "policyUUID": "5d732e95",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
