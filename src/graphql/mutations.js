@@ -1,45 +1,45 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = /* GraphQL */ `
-  mutation CreateTodo(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
+export const createBracket = /* GraphQL */ `
+  mutation CreateBracket(
+    $input: CreateBracketInput!
+    $condition: ModelBracketConditionInput
   ) {
-    createTodo(input: $input, condition: $condition) {
+    createBracket(input: $input, condition: $condition) {
       id
-      name
-      description
+      untitledfield
       createdAt
       updatedAt
+      owner
     }
   }
 `;
-export const updateTodo = /* GraphQL */ `
-  mutation UpdateTodo(
-    $input: UpdateTodoInput!
-    $condition: ModelTodoConditionInput
+export const updateBracket = /* GraphQL */ `
+  mutation UpdateBracket(
+    $input: UpdateBracketInput!
+    $condition: ModelBracketConditionInput
   ) {
-    updateTodo(input: $input, condition: $condition) {
+    updateBracket(input: $input, condition: $condition) {
       id
-      name
-      description
+      untitledfield
       createdAt
       updatedAt
+      owner
     }
   }
 `;
-export const deleteTodo = /* GraphQL */ `
-  mutation DeleteTodo(
-    $input: DeleteTodoInput!
-    $condition: ModelTodoConditionInput
+export const deleteBracket = /* GraphQL */ `
+  mutation DeleteBracket(
+    $input: DeleteBracketInput!
+    $condition: ModelBracketConditionInput
   ) {
-    deleteTodo(input: $input, condition: $condition) {
+    deleteBracket(input: $input, condition: $condition) {
       id
-      name
-      description
+      untitledfield
       createdAt
       updatedAt
+      owner
     }
   }
 `;
