@@ -1,30 +1,30 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getTodo = /* GraphQL */ `
-  query GetTodo($id: ID!) {
-    getTodo(id: $id) {
+export const getBracket = /* GraphQL */ `
+  query GetBracket($id: ID!) {
+    getBracket(id: $id) {
       id
-      name
-      description
+      untitledfield
       createdAt
       updatedAt
+      owner
     }
   }
 `;
-export const listTodos = /* GraphQL */ `
-  query ListTodos(
-    $filter: ModelTodoFilterInput
+export const listBrackets = /* GraphQL */ `
+  query ListBrackets(
+    $filter: ModelBracketFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listBrackets(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
-        description
+        untitledfield
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }

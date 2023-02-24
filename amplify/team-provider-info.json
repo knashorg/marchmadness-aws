@@ -18,6 +18,9 @@
       "auth": {
         "marchmadnessawsfb4ce0b0": {}
       },
+      "storage": {
+        "s3marchmadnessawsstoragead1e8386": {}
+      },
       "hosting": {
         "amplifyhosting": {
           "appId": "d28o6viprq8vmg",
