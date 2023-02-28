@@ -2,29 +2,38 @@
 import React, { useEffect, useState } from "react";
 
 // Amplify Setup
-import { Amplify, Auth } from "aws-amplify";
+import { Amplify } from "aws-amplify";
 import awsExports from "../aws-exports";
 import "@aws-amplify/ui-react/styles.css";
 
 // Amplify Components
 import { KnashNavigationBar } from "../ui-components";
+import { Button, useAuthenticator } from "@aws-amplify/ui-react";
 
 // Images
 import avatarimg from "../images/default-avatar.png";
 import logo from "../images/logo.png";
-import { Outlet } from "react-router-dom";
-import useAmplifyUser from "../useAmplifyUser";
+import { Outlet, useNavigate } from "react-router-dom";
 
 // DO NOT TOUCH
 Amplify.configure(awsExports);
 
 const Root = () => {
-  const [user, setUser] = useAmplifyUser();
+  const { route, signOut } = useAuthenticator((context) => [
+    context.route,
+    context.signOut,
+  ]);
+  const navigate = useNavigate();
+
+  function logOut() {
+    signOut();
+    navigate("/login");
+  }
 
   return (
     <div>
       <div className="NavBar">
-        {user ? (
+        {route === 'authenticated' ? (
           <KnashNavigationBar
             signedIn="Yes"
             width={"100%"}
@@ -48,6 +57,7 @@ const Root = () => {
       </div>
       <div className="detail">
         <Outlet />
+        <Button>{onclick=logOut}Log Out</Button>
       </div>
     </div>
   );

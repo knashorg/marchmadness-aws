@@ -6,9 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 
 // Amplify
 import "@aws-amplify/ui-react/styles.css";
-import { AmplifyProvider } from "@aws-amplify/ui-react";
+import { AmplifyProvider, Authenticator } from "@aws-amplify/ui-react";
 import { ThemeProvider } from "@aws-amplify/ui-react";
-import { Amplify } from "aws-amplify";
+import { Amplify, Auth } from "aws-amplify";
 import awsconfig from "./aws-exports";
 import { studioTheme } from "./ui-components";
 
@@ -21,7 +21,8 @@ import ErrorPage from "./error-page";
 // Pages
 import Root from "./routes/Root";
 import Account from "./routes/Account";
-import SignUp from "./routes/Sign-Up";
+import Login from "./routes/Login";
+import RequireAuth from "./RequireAuth";
 
 Amplify.configure(awsconfig);
 
@@ -33,11 +34,17 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/account/:accountId",
-        element: <Account />,
+        element: () => {
+          return (
+            <RequireAuth>
+              <Account />
+            </RequireAuth>
+          );
+        },
       },
       {
-        path: "/sign-up",
-        element: <SignUp />,
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
@@ -45,11 +52,13 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AmplifyProvider>
-      <ThemeProvider theme={studioTheme}>
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </AmplifyProvider>
+    <Authenticator.Provider>
+      <AmplifyProvider>
+        <ThemeProvider theme={studioTheme}>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </AmplifyProvider>
+    </Authenticator.Provider>
   </React.StrictMode>
 );
 
