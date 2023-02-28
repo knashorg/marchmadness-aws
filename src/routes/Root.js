@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import { Amplify, Auth } from "aws-amplify";
 import awsExports from "../aws-exports";
 import "@aws-amplify/ui-react/styles.css";
-import loadUser from "../loadUser";
 
 // Amplify Components
 import { KnashNavigationBar } from "../ui-components";
@@ -14,21 +13,18 @@ import { KnashNavigationBar } from "../ui-components";
 import avatarimg from "../images/default-avatar.png";
 import logo from "../images/logo.png";
 import { Outlet } from "react-router-dom";
+import useAmplifyUser from "../useAmplifyUser";
 
 // DO NOT TOUCH
 Amplify.configure(awsExports);
 
 const Root = () => {
-  const [user, setUser] = useState({user: null})
-
-  useEffect(() => {
-    loadUser(setUser);
-  })
+  const [user, setUser] = useAmplifyUser();
 
   return (
     <div>
       <div className="NavBar">
-        {user.user ? (
+        {user ? (
           <KnashNavigationBar
             signedIn="Yes"
             width={"100%"}
