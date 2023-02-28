@@ -40,7 +40,7 @@ const Root = () => {
             logoimg={logo}
             avatarimg={avatarimg}
             buttonlabel="Sign Up"
-            buttonurl="/sign-up"
+            buttonurl="/login"
             avatarurl="/account/1"
           />
         ) : (
@@ -50,7 +50,7 @@ const Root = () => {
             logoimg={logo}
             avatarimg={avatarimg}
             buttonlabel="Sign Up"
-            buttonurl="/sign-up"
+            buttonurl="/login"
             avatarurl="/account/1"
           />
         )}
