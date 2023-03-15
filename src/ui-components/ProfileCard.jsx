@@ -8,7 +8,6 @@
 import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
-import MyIcon from "./MyIcon";
 export default function ProfileCard(props) {
   const { overrides, ...rest } = props;
   return (
@@ -69,8 +68,8 @@ export default function ProfileCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Melinda Marcus"
-          {...getOverrideProps(overrides, "Melinda Marcus")}
+          children="Email: "
+          {...getOverrideProps(overrides, "Email")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -91,8 +90,8 @@ export default function ProfileCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Design Engineer at Cloth Studios"
-          {...getOverrideProps(overrides, "Design Engineer at Cloth Studios")}
+          children="Advisory:"
+          {...getOverrideProps(overrides, "Advisory: ")}
         ></Text>
       </Flex>
       <Flex
@@ -107,20 +106,6 @@ export default function ProfileCard(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Followers")}
       >
-        <MyIcon
-          width="24px"
-          height="24px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          overflow="hidden"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          type="group"
-          {...getOverrideProps(overrides, "MyIcon")}
-        ></MyIcon>
         <Text
           fontFamily="Inter"
           fontSize="16px"
@@ -140,17 +125,18 @@ export default function ProfileCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="99 Followers"
-          {...getOverrideProps(overrides, "99 Followers")}
+          children="100 Points"
+          {...getOverrideProps(overrides, "100 Points")}
         ></Text>
       </Flex>
       <Button
+        width="unset"
+        height="unset"
         shrink="0"
         alignSelf="stretch"
         size="large"
         isDisabled={false}
         variation="primary"
-        children="View Profile"
         {...getOverrideProps(overrides, "Button")}
       ></Button>
     </Flex>

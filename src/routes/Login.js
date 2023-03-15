@@ -1,4 +1,5 @@
-// components/Login.js
+// Login.js
+
 import { useEffect } from "react";
 
 import { Authenticator, useAuthenticator, View } from '@aws-amplify/ui-react';

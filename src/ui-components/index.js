@@ -36,5 +36,5 @@ export { default as HeroLayout1 } from "./HeroLayout1";
 export { default as KnashNavigationBar } from "./KnashNavigationBar";
 export { default as MarchMadness2019Bracket } from "./MarchMadness2019Bracket";
 export { default as studioTheme } from "./studioTheme";
-export { default as BracketCreateForm } from "./BracketCreateForm";
-export { default as BracketUpdateForm } from "./BracketUpdateForm";
+export { default as TeamCreateForm } from "./TeamCreateForm";
+export { default as TeamUpdateForm } from "./TeamUpdateForm";

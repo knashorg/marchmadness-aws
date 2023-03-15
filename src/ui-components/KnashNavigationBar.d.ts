@@ -7,6 +7,7 @@
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { ButtonProps, FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { SyntheticEvent } from "react";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type KnashNavigationBarOverridesProps = {
     KnashNavigationBar?: PrimitiveOverrideProps<FlexProps>;
@@ -19,6 +20,8 @@ export declare type KnashNavigationBarOverridesProps = {
     Leaderboard?: PrimitiveOverrideProps<TextProps>;
     SignIn?: PrimitiveOverrideProps<FlexProps>;
     "Sign In"?: PrimitiveOverrideProps<TextProps>;
+    SignOut37202172?: PrimitiveOverrideProps<FlexProps>;
+    SignOut37202173?: PrimitiveOverrideProps<TextProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
     Avatar?: PrimitiveOverrideProps<FlexProps>;
     src37032670?: PrimitiveOverrideProps<ImageProps>;
@@ -29,6 +32,11 @@ export declare type KnashNavigationBarProps = React.PropsWithChildren<Partial<Fl
     buttonlabel?: String;
     buttonurl?: String;
     avatarurl?: String;
+    leaderboardurl?: String;
+    bracketurl?: String;
+    signinurl?: String;
+    signout?: (event: SyntheticEvent) => void;
+    homeurl?: String;
 } & {
     signedIn?: "No" | "Yes";
 } & {

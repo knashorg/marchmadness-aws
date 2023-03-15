@@ -1,5 +1,6 @@
-// Home.js
-import React, { useEffect, useState } from "react";
+// Root.js
+
+import React from "react";
 
 // Amplify Setup
 import { Amplify } from "aws-amplify";
@@ -8,12 +9,12 @@ import "@aws-amplify/ui-react/styles.css";
 
 // Amplify Components
 import { KnashNavigationBar } from "../ui-components";
-import { Button, useAuthenticator } from "@aws-amplify/ui-react";
+import { useAuthenticator } from "@aws-amplify/ui-react";
 
 // Images
 import avatarimg from "../images/default-avatar.png";
 import logo from "../images/logo.png";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 // DO NOT TOUCH
 Amplify.configure(awsExports);
@@ -23,17 +24,11 @@ const Root = () => {
     context.route,
     context.signOut,
   ]);
-  const navigate = useNavigate();
-
-  function logOut() {
-    signOut();
-    navigate("/login");
-  }
 
   return (
     <div>
       <div className="NavBar">
-        {route === 'authenticated' ? (
+        {route === "authenticated" ? (
           <KnashNavigationBar
             signedIn="Yes"
             width={"100%"}
@@ -52,12 +47,12 @@ const Root = () => {
             buttonlabel="Sign Up"
             buttonurl="/login"
             avatarurl="/account/1"
+            signinurl="/login"
           />
         )}
       </div>
       <div className="detail">
         <Outlet />
-        <Button>{onclick=logOut}Log Out</Button>
       </div>
     </div>
   );

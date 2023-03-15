@@ -4,8 +4,9 @@ import { schema } from './schema';
 
 
 
-const { Bracket } = initSchema(schema);
+const { Team, Bracket } = initSchema(schema);
 
 export {
+  Team,
   Bracket
 };

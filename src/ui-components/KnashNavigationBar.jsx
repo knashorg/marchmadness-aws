@@ -10,6 +10,7 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
+  useAuthSignOutAction,
   useNavigateAction,
 } from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
@@ -20,6 +21,11 @@ export default function KnashNavigationBar(props) {
     buttonlabel,
     buttonurl,
     avatarurl,
+    leaderboardurl = "/leaderboard",
+    bracketurl = "/my-bracket",
+    signinurl,
+    signout,
+    homeurl = "/",
     overrides: overridesProp,
     ...rest
   } = props;
@@ -34,6 +40,8 @@ export default function KnashNavigationBar(props) {
         LeaderBoard: {},
         "Sign In": {},
         SignIn: {},
+        SignOut37202173: {},
+        SignOut37202172: {},
         Button: {},
         src37032670: {},
         Avatar: {},
@@ -50,8 +58,10 @@ export default function KnashNavigationBar(props) {
         MyBracket: {},
         Leaderboard: {},
         LeaderBoard: {},
-        "Sign In": { children: "Sign Out" },
-        SignIn: {},
+        "Sign In": {},
+        SignIn: { display: "none" },
+        SignOut37202173: {},
+        SignOut37202172: { display: "flex" },
         Button: { display: "none" },
         src37032670: {},
         Avatar: { display: "flex" },
@@ -65,6 +75,19 @@ export default function KnashNavigationBar(props) {
     getOverridesFromVariants(variants, props),
     overridesProp || {}
   );
+  const srcThreeSevenZeroThreeTwoSixFiveZeroOnClick = useNavigateAction({
+    type: "url",
+    url: homeurl,
+  });
+  const myBracketOnClick = useNavigateAction({ type: "url", url: bracketurl });
+  const leaderBoardOnClick = useNavigateAction({
+    type: "url",
+    url: leaderboardurl,
+  });
+  const signInOnClick = useNavigateAction({ type: "url", url: signinurl });
+  const signOutThreeSevenTwoZeroTwoOneSevenTwoOnClick = useAuthSignOutAction({
+    global: false,
+  });
   const buttonOnClick = useNavigateAction({ type: "url", url: buttonurl });
   const avatarOnClick = useNavigateAction({ type: "url", url: avatarurl });
   return (
@@ -110,6 +133,9 @@ export default function KnashNavigationBar(props) {
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src={logoimg}
+          onClick={() => {
+            srcThreeSevenZeroThreeTwoSixFiveZeroOnClick();
+          }}
           {...getOverrideProps(overrides, "src37032650")}
         ></Image>
       </Flex>
@@ -139,6 +165,9 @@ export default function KnashNavigationBar(props) {
           position="relative"
           padding="10px 10px 10px 10px"
           display="flex"
+          onClick={() => {
+            myBracketOnClick();
+          }}
           {...getOverrideProps(overrides, "MyBracket")}
         >
           <Text
@@ -176,6 +205,9 @@ export default function KnashNavigationBar(props) {
           position="relative"
           padding="10px 10px 10px 10px"
           display="flex"
+          onClick={() => {
+            leaderBoardOnClick();
+          }}
           {...getOverrideProps(overrides, "LeaderBoard")}
         >
           <Text
@@ -213,6 +245,9 @@ export default function KnashNavigationBar(props) {
           position="relative"
           padding="10px 10px 10px 10px"
           display="flex"
+          onClick={() => {
+            signInOnClick();
+          }}
           {...getOverrideProps(overrides, "SignIn")}
         >
           <Text
@@ -238,7 +273,49 @@ export default function KnashNavigationBar(props) {
             {...getOverrideProps(overrides, "Sign In")}
           ></Text>
         </Flex>
+        <Flex
+          gap="10px"
+          direction="column"
+          width="unset"
+          height="unset"
+          justifyContent="flex-start"
+          alignItems="flex-start"
+          overflow="hidden"
+          shrink="0"
+          position="relative"
+          padding="10px 10px 10px 10px"
+          display="none"
+          onClick={() => {
+            signOutThreeSevenTwoZeroTwoOneSevenTwoOnClick();
+          }}
+          {...getOverrideProps(overrides, "SignOut37202172")}
+        >
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="700"
+            color="rgba(255,255,255,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            letterSpacing="0.01px"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Sign Out"
+            {...getOverrideProps(overrides, "SignOut37202173")}
+          ></Text>
+        </Flex>
         <Button
+          width="unset"
+          height="unset"
           shrink="0"
           size="default"
           isDisabled={false}
