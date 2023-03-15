@@ -45,33 +45,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/account/:accountId",
-        element: () => {
-          return (
-            <RequireAuth>
-              <Account />
-            </RequireAuth>
-          );
-        },
+        element: (
+          <RequireAuth>
+            <Account />
+          </RequireAuth>
+        ),
       },
       {
         path: "/my-bracket",
-        element: () => {
-          return (
-            <RequireAuth>
-              <MyBracket />
-            </RequireAuth>
-          );
-        },
+        element: (
+          <RequireAuth>
+            <MyBracket />
+          </RequireAuth>
+        ),
       },
       {
         path: "/leaderboard",
-        element: () => {
-          return (
-            <RequireAuth>
-              <Leaderboard />
-            </RequireAuth>
-          );
-        },
+        element: (
+          <RequireAuth>
+            <Leaderboard />
+          </RequireAuth>
+        ),
       },
     ],
   },
