@@ -22,10 +22,7 @@ export default function ProfileCard(props) {
     overrides,
     ...rest
   } = props;
-  const buttonOnClick = useNavigateAction({
-    type: "url",
-    url: "dev.knash.cloud/bracket",
-  });
+  const buttonOnClick = useNavigateAction({ type: "url", url: "/my-bracket" });
   return (
     <Flex
       gap="24px"
