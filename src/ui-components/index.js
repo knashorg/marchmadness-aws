@@ -4,7 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-export { default as ItemCard } from "./ItemCard";
+export { default as CountdownTimer } from "./CountdownTimer";
 export { default as TallCard } from "./TallCard";
 export { default as ContactUs } from "./ContactUs";
 export { default as StandardCard } from "./StandardCard";
@@ -24,6 +24,7 @@ export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as CommentCard } from "./CommentCard";
 export { default as Ampligram } from "./Ampligram";
 export { default as SideBar } from "./SideBar";
+export { default as Team } from "./Team";
 export { default as ProductCard } from "./ProductCard";
 export { default as Features2x2 } from "./Features2x2";
 export { default as MyIcon } from "./MyIcon";

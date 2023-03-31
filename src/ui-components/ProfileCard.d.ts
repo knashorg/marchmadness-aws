@@ -12,13 +12,21 @@ export declare type ProfileCardOverridesProps = {
     ProfileCard?: PrimitiveOverrideProps<FlexProps>;
     image?: PrimitiveOverrideProps<ImageProps>;
     Name?: PrimitiveOverrideProps<FlexProps>;
-    Email?: PrimitiveOverrideProps<TextProps>;
+    Email29766902?: PrimitiveOverrideProps<TextProps>;
+    Email37651574?: PrimitiveOverrideProps<TextProps>;
     "Advisory: "?: PrimitiveOverrideProps<TextProps>;
     Followers?: PrimitiveOverrideProps<FlexProps>;
     "100 Points"?: PrimitiveOverrideProps<TextProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type ProfileCardProps = React.PropsWithChildren<Partial<FlexProps> & {
+    image?: React.ReactNode;
+    Name?: String;
+    Advisory?: String;
+    Email?: String;
+    Points?: String;
+    Bracket?: String;
+} & {
     overrides?: ProfileCardOverridesProps | undefined | null;
 }>;
 export default function ProfileCard(props: ProfileCardProps): React.ReactElement;

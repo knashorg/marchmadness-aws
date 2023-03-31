@@ -6,10 +6,26 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function ProfileCard(props) {
-  const { overrides, ...rest } = props;
+  const {
+    image,
+    Name = "John Doe",
+    Advisory = "Doe",
+    Email = "John.Doe@lovett.org",
+    Points = "100 points",
+    Bracket = "See Bracket",
+    overrides,
+    ...rest
+  } = props;
+  const buttonOnClick = useNavigateAction({
+    type: "url",
+    url: "dev.knash.cloud/bracket",
+  });
   return (
     <Flex
       gap="24px"
@@ -36,6 +52,7 @@ export default function ProfileCard(props) {
         borderRadius="160px"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        src={image}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
@@ -68,8 +85,29 @@ export default function ProfileCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Email: "
-          {...getOverrideProps(overrides, "Email")}
+          children={Name}
+          {...getOverrideProps(overrides, "Email29766902")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="20px"
+          fontWeight="500"
+          color="rgba(13,26,38,1)"
+          lineHeight="25px"
+          textAlign="center"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={Email}
+          {...getOverrideProps(overrides, "Email37651574")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -90,7 +128,7 @@ export default function ProfileCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Advisory:"
+          children={Advisory}
           {...getOverrideProps(overrides, "Advisory: ")}
         ></Text>
       </Flex>
@@ -125,7 +163,7 @@ export default function ProfileCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="100 Points"
+          children={Points}
           {...getOverrideProps(overrides, "100 Points")}
         ></Text>
       </Flex>
@@ -137,6 +175,10 @@ export default function ProfileCard(props) {
         size="large"
         isDisabled={false}
         variation="primary"
+        children={Bracket}
+        onClick={() => {
+          buttonOnClick();
+        }}
         {...getOverrideProps(overrides, "Button")}
       ></Button>
     </Flex>
