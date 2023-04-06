@@ -1,62 +1,75 @@
 // Account.js
 
 import { Form } from "react-router-dom";
+// Amplify Setup
+import { Amplify, Auth } from "aws-amplify";
+import awsExports from "../aws-exports";
+import "@aws-amplify/ui-react/styles.css";
+
+// Amplify Components
+import { ProfileCard } from "../ui-components";
+import { useAmplify, useAuthenticator } from "@aws-amplify/ui-react";
+// Images
+import avatarimg from "../images/default-avatar.png";
+
+// Custom
+import useAmpliyUser from "../useAmplifyUser";
+import { useEffect, useState } from "react";
+
 
 const Account = () => {
-  const contact = {
-    first: "Your",
-    last: "Name",
-    avatar: "https://placekitten.com/g/200/200",
-    twitter: "your_handle",
-    notes: "Some notes",
-    favorite: true,
-  };
+  const [user, setUser] = useState([]);
 
+  useEffect(() => {
+    fetchAccountData();
+  }, []);
+
+  async function fetchAccountData() {
+    function getUser() {
+      return Auth.currentAuthenticatedUser()
+        .then((userData) => userData)
+        .catch(() => console.log("Not signed in"));
+    }
+    getUser().then((userData) => setUser(userData));
+  }
+
+
+  const { route, signOut } = useAuthenticator((context) => [
+    context.route,
+    context.signOut,
+  ]);
+  //const [user, setUser] = useAmpliyUser();
+  console.log(user)
+  const profile = Auth.currentSession()
+  let lname = Auth.currentUserInfo.Emailo9
+  let mail = user.attributes
+  let pp = profile.avatarimg
+  let advis = "Advisory: " + "1"
   return (
-    <div id="contact">
-      <div>
-        <img key={contact.avatar} src={contact.avatar || null} />
-      </div>
 
-      <div>
-        <h1>
-          {contact.first || contact.last ? (
-            <>
-              {contact.first} {contact.last}
-            </>
-          ) : (
-            <i>No Name</i>
-          )}{" "}
-          <Favorite contact={contact} />
-        </h1>
+    <div>
+      <div className="AccountPage">
+        {user && user == ! "null" && user !== "undefined" ? (
+          () => {
+            let tempUser = { ...user };
+            return (
+              <ProfileCard
+                image={pp}
+                Name={lname}
+                Advisory={advis}
+                Email={tempUser.attributes.email}
+                Points="100 points"
+              />
+            )
+          }
 
-        {contact.twitter && (
-          <p>
-            <a target="_blank" href={`https://twitter.com/${contact.twitter}`}>
-              {contact.twitter}
-            </a>
-          </p>
+        ) : (
+          <ProfileCard
+
+          />
         )}
-
-        {contact.notes && <p>{contact.notes}</p>}
-
-        <div>
-          <Form action="edit">
-            <button type="submit">Edit</button>
-          </Form>
-          <Form
-            method="post"
-            action="destroy"
-            onSubmit={(event) => {
-              if (!window.confirm("Please confirm you want to delete this record.")) {
-                event.preventDefault();
-              }
-            }}
-          >
-            <button type="submit">Delete</button>
-          </Form>
-        </div>
       </div>
+
     </div>
   );
 }
