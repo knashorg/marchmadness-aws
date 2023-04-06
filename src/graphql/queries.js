@@ -1,6 +1,70 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getNewBracket = /* GraphQL */ `
+  query GetNewBracket($id: ID!) {
+    getNewBracket(id: $id) {
+      id
+      json
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const listNewBrackets = /* GraphQL */ `
+  query ListNewBrackets(
+    $filter: ModelNewBracketFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNewBrackets(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        json
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncNewBrackets = /* GraphQL */ `
+  query SyncNewBrackets(
+    $filter: ModelNewBracketFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncNewBrackets(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        json
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const getTeam = /* GraphQL */ `
   query GetTeam($id: ID!) {
     getTeam(id: $id) {

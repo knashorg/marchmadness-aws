@@ -1,6 +1,57 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createNewBracket = /* GraphQL */ `
+  mutation CreateNewBracket(
+    $input: CreateNewBracketInput!
+    $condition: ModelNewBracketConditionInput
+  ) {
+    createNewBracket(input: $input, condition: $condition) {
+      id
+      json
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const updateNewBracket = /* GraphQL */ `
+  mutation UpdateNewBracket(
+    $input: UpdateNewBracketInput!
+    $condition: ModelNewBracketConditionInput
+  ) {
+    updateNewBracket(input: $input, condition: $condition) {
+      id
+      json
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const deleteNewBracket = /* GraphQL */ `
+  mutation DeleteNewBracket(
+    $input: DeleteNewBracketInput!
+    $condition: ModelNewBracketConditionInput
+  ) {
+    deleteNewBracket(input: $input, condition: $condition) {
+      id
+      json
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
 export const createTeam = /* GraphQL */ `
   mutation CreateTeam(
     $input: CreateTeamInput!
