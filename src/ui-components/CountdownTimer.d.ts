@@ -6,19 +6,23 @@
 
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { BadgeProps, FlexProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { BadgeProps, FlexProps, TextProps } from "@aws-amplify/ui-react";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type CountdownTimerOverridesProps = {
-    CountdownTimer?: PrimitiveOverrideProps<ViewProps>;
-    "Frame 417"?: PrimitiveOverrideProps<FlexProps>;
+    CountdownTimer?: PrimitiveOverrideProps<FlexProps>;
+    Left?: PrimitiveOverrideProps<FlexProps>;
+    Badge?: PrimitiveOverrideProps<BadgeProps>;
+    "Time Until"?: PrimitiveOverrideProps<FlexProps>;
     "Product Title"?: PrimitiveOverrideProps<FlexProps>;
     "Time Until:"?: PrimitiveOverrideProps<TextProps>;
-    "Selection of teams"?: PrimitiveOverrideProps<TextProps>;
+    "Brackets Lock"?: PrimitiveOverrideProps<TextProps>;
+    Timer?: PrimitiveOverrideProps<FlexProps>;
+    Time?: PrimitiveOverrideProps<FlexProps>;
     "03:05:22:48"?: PrimitiveOverrideProps<TextProps>;
-    Badge?: PrimitiveOverrideProps<BadgeProps>;
+    Labels?: PrimitiveOverrideProps<FlexProps>;
     "days hours mins secs"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type CountdownTimerProps = React.PropsWithChildren<Partial<ViewProps> & {
+export declare type CountdownTimerProps = React.PropsWithChildren<Partial<FlexProps> & {
     countdownvalue?: String;
     bracketurl?: String;
 } & {
