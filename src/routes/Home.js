@@ -105,7 +105,9 @@ const Home = () => {
   return (
     <div>
       <div className="MainPage">
+        <center>
         <CountdownTimer width="100%" countdownvalue={timer} />
+        </center>
       </div>
       <h1>
         <center>Welcome to our Frozen Four Bracket Challenge!</center>
