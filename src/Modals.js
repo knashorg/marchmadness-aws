@@ -11,11 +11,14 @@ export function VerticallyCenteredModal1(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Team 1</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Boston University</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Record</h4>
-        <p>About this team.</p>
+        <h4>27 - 10 - 0</h4>
+        <p> 38 tournament appearances
+            Best Finish - Champions (5x)
+            Head Coach - Jay Pandolfo
+</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -33,11 +36,14 @@ export function VerticallyCenteredModal2(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Team 2</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Canisius</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Record</h4>
-        <p>About this team.</p>
+        <h4>20 - 18 - 3</h4>
+        <p> 2 tournament appearances
+            Best Finish - DNP
+            Head Coach - Trevor Large
+</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -55,11 +61,14 @@ export function VerticallyCenteredModal3(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Team 3</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Colgate</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Record</h4>
-        <p>About this team.</p>
+        <h4>19 - 15 - 5</h4>
+        <p> 6 tournament appearances
+            Best Finish - Runner-up
+            Head Coach - Don Vaughn
+</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -77,11 +86,14 @@ export function VerticallyCenteredModal4(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Team 4</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Cornell</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Record</h4>
-        <p>About this team.</p>
+        <h4>20 - 10 - 2</h4>
+        <p> 23 tournament appearances
+            Best Finish - Champions (2x)
+            Head Coach - Mike Schafer
+</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -99,11 +111,14 @@ export function VerticallyCenteredModal5(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Team 5</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Denver</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Record</h4>
-        <p>About this team.</p>
+        <h4>30 - 9 - 0</h4>
+        <p> 32 tournament appearances
+            Best Finish - Champions (9x)
+            Head Coach - David Carle
+</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
