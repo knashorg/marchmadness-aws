@@ -1,6 +1,57 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateNewBracket = /* GraphQL */ `
+  subscription OnCreateNewBracket(
+    $filter: ModelSubscriptionNewBracketFilterInput
+    $owner: String
+  ) {
+    onCreateNewBracket(filter: $filter, owner: $owner) {
+      id
+      json
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const onUpdateNewBracket = /* GraphQL */ `
+  subscription OnUpdateNewBracket(
+    $filter: ModelSubscriptionNewBracketFilterInput
+    $owner: String
+  ) {
+    onUpdateNewBracket(filter: $filter, owner: $owner) {
+      id
+      json
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const onDeleteNewBracket = /* GraphQL */ `
+  subscription OnDeleteNewBracket(
+    $filter: ModelSubscriptionNewBracketFilterInput
+    $owner: String
+  ) {
+    onDeleteNewBracket(filter: $filter, owner: $owner) {
+      id
+      json
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
 export const onCreateTeam = /* GraphQL */ `
   subscription OnCreateTeam($filter: ModelSubscriptionTeamFilterInput) {
     onCreateTeam(filter: $filter) {
