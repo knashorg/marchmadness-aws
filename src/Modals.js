@@ -2,7 +2,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import React from "react";
 
-export function VerticallyCenteredModal1(props) {
+export function VerticallyCenteredModal7(props) {
   return (
     <Modal
       {...props}
@@ -52,7 +52,7 @@ export function VerticallyCenteredModal2(props) {
   );
 }
 
-export function VerticallyCenteredModal3(props) {
+export function VerticallyCenteredModal10(props) {
   return (
     <Modal
       {...props}
@@ -77,7 +77,7 @@ export function VerticallyCenteredModal3(props) {
   );
 }
 
-export function VerticallyCenteredModal4(props) {
+export function VerticallyCenteredModal6(props) {
   return (
     <Modal
       {...props}
@@ -127,7 +127,7 @@ export function VerticallyCenteredModal5(props) {
   );
 }
 
-export function VerticallyCenteredModal6(props) {
+export function VerticallyCenteredModal15(props) {
   return (
     <Modal
       {...props}
@@ -152,7 +152,7 @@ export function VerticallyCenteredModal6(props) {
   );
 }
 
-export function VerticallyCenteredModal7(props) {
+export function VerticallyCenteredModal14(props) {
   return (
     <Modal
       {...props}
@@ -177,7 +177,7 @@ export function VerticallyCenteredModal7(props) {
   );
 }
 
-export function VerticallyCenteredModal8(props) {
+export function VerticallyCenteredModal9(props) {
   return (
     <Modal
       {...props}
@@ -202,7 +202,7 @@ export function VerticallyCenteredModal8(props) {
   );
 }
 
-export function VerticallyCenteredModal9(props) {
+export function VerticallyCenteredModal12(props) {
   return (
     <Modal
       {...props}
@@ -227,7 +227,7 @@ export function VerticallyCenteredModal9(props) {
   );
 }
 
-export function VerticallyCenteredModal10(props) {
+export function VerticallyCenteredModal1(props) {
   return (
     <Modal
       {...props}
@@ -252,7 +252,7 @@ export function VerticallyCenteredModal10(props) {
   );
 }
 
-export function VerticallyCenteredModal11(props) {
+export function VerticallyCenteredModal4(props) {
   return (
     <Modal
       {...props}
@@ -277,7 +277,7 @@ export function VerticallyCenteredModal11(props) {
   );
 }
 
-export function VerticallyCenteredModal12(props) {
+export function VerticallyCenteredModal16(props) {
   return (
     <Modal
       {...props}
@@ -302,7 +302,7 @@ export function VerticallyCenteredModal12(props) {
   );
 }
 
-export function VerticallyCenteredModal13(props) {
+export function VerticallyCenteredModal11(props) {
   return (
     <Modal
       {...props}
@@ -327,7 +327,7 @@ export function VerticallyCenteredModal13(props) {
   );
 }
 
-export function VerticallyCenteredModal14(props) {
+export function VerticallyCenteredModal13(props) {
   return (
     <Modal
       {...props}
@@ -352,7 +352,7 @@ export function VerticallyCenteredModal14(props) {
   );
 }
 
-export function VerticallyCenteredModal15(props) {
+export function VerticallyCenteredModal3(props) {
   return (
     <Modal
       {...props}
@@ -377,7 +377,7 @@ export function VerticallyCenteredModal15(props) {
   );
 }
 
-export function VerticallyCenteredModal16(props) {
+export function VerticallyCenteredModal8(props) {
   return (
     <Modal
       {...props}
