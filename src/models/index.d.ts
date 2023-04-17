@@ -6,6 +6,34 @@ import { LazyLoading, LazyLoadingDisabled, AsyncCollection } from "@aws-amplify/
 
 
 
+type EagerNewBracket = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<NewBracket, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly json?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyNewBracket = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<NewBracket, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly json?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type NewBracket = LazyLoading extends LazyLoadingDisabled ? EagerNewBracket : LazyNewBracket
+
+export declare const NewBracket: (new (init: ModelInit<NewBracket>) => NewBracket) & {
+  copyOf(source: NewBracket, mutator: (draft: MutableModel<NewBracket>) => MutableModel<NewBracket> | void): NewBracket;
+}
+
 type EagerTeam = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<Team, 'id'>;

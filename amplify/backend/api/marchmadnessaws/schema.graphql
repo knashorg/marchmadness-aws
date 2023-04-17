@@ -1,3 +1,8 @@
+type NewBracket @model @auth(rules: [{allow: public}, {allow: owner, operations: [create, read, update]}]) {
+  id: ID!
+  json: AWSJSON
+}
+
 type Team @model @auth(rules: [{allow: public, operations: [read]}]) {
   id: ID!
   name: String
@@ -28,4 +33,5 @@ type Bracket @model @auth(rules: [{allow: public}, {allow: private}, {allow: own
   team15: String
   team16: String
   winning: Boolean
-} 
+}
+ 

@@ -42,5 +42,7 @@ export { default as FrozenFourBracket } from "./FrozenFourBracket";
 export { default as KnashNavigationBar } from "./KnashNavigationBar";
 export { default as MarchMadness2019Bracket } from "./MarchMadness2019Bracket";
 export { default as studioTheme } from "./studioTheme";
+export { default as NewBracketCreateForm } from "./NewBracketCreateForm";
+export { default as NewBracketUpdateForm } from "./NewBracketUpdateForm";
 export { default as TeamCreateForm } from "./TeamCreateForm";
 export { default as TeamUpdateForm } from "./TeamUpdateForm";
