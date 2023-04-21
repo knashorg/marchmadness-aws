@@ -4,8 +4,9 @@
 import React from "react";
 
 //Amplify
-import { API, graphqlOperation } from "aws-amplify";
+import { Auth, API, graphqlOperation } from "aws-amplify";
 import * as queries from "../graphql/queries";
+import * as mutations from "../graphql/mutations";
 
 // UI Component
 import { Image } from "@aws-amplify/ui-react";
@@ -52,6 +53,17 @@ import stcloudstimg from "../images/st-cloud-st.png";
 import westernmichimg from "../images/western-mich.png";
 
 const MyBracket = () => {
+  const [user, setUser] = React.useState([]);
+
+  async function fetchAccountData() {
+    function getUser() {
+      return Auth.currentAuthenticatedUser()
+        .then((userData) => userData)
+        .catch(() => console.log("Not signed in"));
+    }
+    getUser().then((userData) => setUser(userData));
+  }
+
   const [modalShow1, setModalShow1] = React.useState(false);
   const [modalShow2, setModalShow2] = React.useState(false);
   const [modalShow3, setModalShow3] = React.useState(false);
@@ -112,7 +124,7 @@ const MyBracket = () => {
 
   const [champText, setChampText] = React.useState("CHAMPION");
 
-  const JSONData = {
+  const [JSONData, setJSONData] = React.useState({
     pos1: position1,
     pos2: position2,
     pos3: position3,
@@ -143,11 +155,80 @@ const MyBracket = () => {
     pos28: position28,
     pos29: position29,
     pos30: position30,
-  };
+  });
 
   React.useEffect(() => {
     fetchTeams();
+    fetchAccountData();
+    //saveBracket();
+    getBrackets();
   }, []);
+
+  React.useEffect(() => {
+    setJSONData({
+      pos1: position1,
+      pos2: position2,
+      pos3: position3,
+      pos4: position4,
+      pos5: position5,
+      pos6: position6,
+      pos7: position7,
+      pos8: position8,
+      pos9: position9,
+      pos10: position10,
+      pos11: position11,
+      pos12: position12,
+      pos13: position13,
+      pos14: position14,
+      pos15: position15,
+      pos16: position16,
+      pos17: position17,
+      pos18: position18,
+      pos19: position19,
+      pos20: position20,
+      pos21: position21,
+      pos22: position22,
+      pos23: position23,
+      pos24: position24,
+      pos25: position25,
+      pos26: position26,
+      pos27: position27,
+      pos28: position28,
+      pos29: position29,
+      pos30: position30,
+    });
+  }, [
+    position1,
+    position2,
+    position3,
+    position4,
+    position5,
+    position6,
+    position7,
+    position8,
+    position9,
+    position10,
+    position11,
+    position12,
+    position13,
+    position14,
+    position15,
+    position16,
+    position17,
+    position18,
+    position19,
+    position20,
+    position21,
+    position22,
+    position23,
+    position24,
+    position25,
+    position26,
+    position27,
+    position28,
+    position29,
+    position30,
+  ]);
 
   async function fetchTeams() {
     try {
@@ -160,11 +241,75 @@ const MyBracket = () => {
     }
   }
 
+  const [data, setData] = React.useState(null)
+
+  async function getBrackets() {
+    try {
+      //const userBracket = await API.graphql()
+      const allBrackets = await API.graphql(
+        graphqlOperation(queries.listNewBrackets, { owner: {eq: "Sam"}})
+      );
+      console.log(allBrackets);
+      console.log(user)
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function saveBracket() {
+    try {
+      setJSONData({
+        pos1: position1,
+        pos2: position2,
+        pos3: position3,
+        pos4: position4,
+        pos5: position5,
+        pos6: position6,
+        pos7: position7,
+        pos8: position8,
+        pos9: position9,
+        pos10: position10,
+        pos11: position11,
+        pos12: position12,
+        pos13: position13,
+        pos14: position14,
+        pos15: position15,
+        pos16: position16,
+        pos17: position17,
+        pos18: position18,
+        pos19: position19,
+        pos20: position20,
+        pos21: position21,
+        pos22: position22,
+        pos23: position23,
+        pos24: position24,
+        pos25: position25,
+        pos26: position26,
+        pos27: position27,
+        pos28: position28,
+        pos29: position29,
+        pos30: position30,
+      });
+      let data = {};
+      try {
+        data = {
+          json: JSON.stringify(JSONData),
+        };
+      } catch (err) {
+        console.log(err);
+      }
+      const newBracket = await API.graphql(
+        graphqlOperation(mutations.createNewBracket, { input: data })
+      );
+      console.log(newBracket);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   const setPositions = (data) => {
     for (let i = 0; i < 16; i++) {
       let state = { ...initialPositionState };
-      console.log(state);
-      console.log(initialPositionState);
       state.src = und;
       state.displayname = data[i].displayname;
       state.team = data[i];
@@ -333,10 +478,6 @@ const MyBracket = () => {
         break;
     }
   };
-
-  console.log(teams);
-  console.log(position1.displayname);
-  console.log(position1.logo);
 
   return (
     <div>

@@ -4,9 +4,8 @@
     "apiName": "marchmadnessaws",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "keyDescription": "api key description",
-      "expirationTime": 30
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authmarchmadnessawsfb4ce0b0"
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
@@ -15,11 +14,13 @@
     },
     "additionalAuthTypes": [
       {
-        "mode": "AWS_IAM"
+        "mode": "API_KEY",
+        "expirationTime": 30,
+        "apiKeyExpirationDate": "2023-05-12T14:49:19.991Z",
+        "keyDescription": "Admin Key for DataStore"
       },
       {
-        "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authmarchmadnessawsfb4ce0b0"
+        "mode": "AWS_IAM"
       }
     ]
   }

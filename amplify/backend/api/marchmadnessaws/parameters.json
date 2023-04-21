@@ -2,7 +2,7 @@
   "AppSyncApiName": "marchmadnessaws",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-02-13T19:57:35.821Z",
+  "AuthModeLastUpdated": "2023-04-12T14:49:21.320Z",
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
       "authmarchmadnessawsfb4ce0b0",

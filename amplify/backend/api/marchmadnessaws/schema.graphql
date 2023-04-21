@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 type NewBracket @model @auth(rules: [{allow: public}, {allow: owner, operations: [create, read, update]}]) {
+=======
+type NewBracket @model @auth(rules: [{allow: owner, operations: [read, delete]}]) {
+>>>>>>> Stashed changes
   id: ID!
   json: AWSJSON
 }
