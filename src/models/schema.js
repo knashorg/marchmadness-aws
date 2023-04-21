@@ -46,6 +46,7 @@ export const schema = {
                     "properties": {
                         "rules": [
                             {
+<<<<<<< Updated upstream
                                 "allow": "public",
                                 "operations": [
                                     "create",
@@ -55,13 +56,20 @@ export const schema = {
                                 ]
                             },
                             {
+=======
+>>>>>>> Stashed changes
                                 "provider": "userPools",
                                 "ownerField": "owner",
                                 "allow": "owner",
                                 "operations": [
+<<<<<<< Updated upstream
                                     "create",
                                     "read",
                                     "update"
+=======
+                                    "read",
+                                    "delete"
+>>>>>>> Stashed changes
                                 ],
                                 "identityClaim": "cognito:username"
                             }
