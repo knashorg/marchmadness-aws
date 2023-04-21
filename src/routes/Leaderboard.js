@@ -1,6 +1,6 @@
 // Leaderboard.js
 
-const Leaderboard = () => {
+const Leaderboard = () => {//nothing yet
     return(
         <body>Leaderboard</body>
     );

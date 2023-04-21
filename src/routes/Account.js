@@ -25,7 +25,7 @@ const Account = () => {
   }, []);
 
   async function fetchAccountData() {
-    function getUser() {
+    function getUser() {//gets info
       return Auth.currentAuthenticatedUser()
         .then((userData) => userData)
         .catch(() => console.log("Not signed in"));
@@ -39,7 +39,7 @@ const Account = () => {
     context.signOut,
   ]);
   //const [user, setUser] = useAmpliyUser();
-  console.log(user)
+  console.log(user)//sets info for all variables
   const profile = Auth.currentSession()
   let lname = Auth.currentUserInfo.Emailo9
   let mail = user.attributes
@@ -52,7 +52,7 @@ const Account = () => {
         {user && user == ! "null" && user !== "undefined" ? (
           () => {
             let tempUser = { ...user };
-            return (
+            return (//gets component and fills it with info
               <ProfileCard
                 image={pp}
                 Name={lname}

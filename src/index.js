@@ -30,7 +30,7 @@ import Leaderboard from "./routes/Leaderboard";
 
 Amplify.configure(awsconfig);
 
-const router = createBrowserRouter([
+const router = createBrowserRouter([//routing between pages
   {
     path: "/",
     element: <Root />,
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root")).render(//getting theme from figma
   <React.StrictMode>
     <Authenticator.Provider>
       <AmplifyProvider>

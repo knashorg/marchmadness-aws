@@ -7,7 +7,7 @@ import '@aws-amplify/ui-react/styles.css';
 
 import { useNavigate, useLocation } from 'react-router';
 
-export default function Login() {
+export default function Login() {//creates login page from amplify tools
   const { route } = useAuthenticator((context) => [context.route]);
   const location = useLocation();
   const navigate = useNavigate();

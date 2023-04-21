@@ -23,7 +23,7 @@ const Home = () => {
   const Ref = useRef(null);
 
   // The state for our timer
-  const [timer, setTimer] = useState("00:00:00");
+  const [timer, setTimer] = useState("00:00:00");//sets up the timer on the home page
 
   const getTimeRemaining = (e) => {
     const total = Date.parse(e) - Date.parse(new Date());
@@ -102,7 +102,7 @@ const Home = () => {
     clearTimer(getDeadTime());
   };
 
-  return (
+  return (//dev of home page
     <div>
       <div className="MainPage">
         <center>

@@ -2,7 +2,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import React from "react";
 
-export function VerticallyCenteredModal7(props) {
+export function VerticallyCenteredModal7(props) {//gives info for each team on the bracket page on click
   return (
     <Modal
       {...props}

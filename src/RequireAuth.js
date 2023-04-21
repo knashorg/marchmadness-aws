@@ -1,6 +1,6 @@
 // RequireAuth.js
 import { useLocation, Navigate } from 'react-router-dom';
-import { useAuthenticator } from '@aws-amplify/ui-react';
+import { useAuthenticator } from '@aws-amplify/ui-react';//makes user log in
 
 export default function RequireAuth({ children }) {
   const location = useLocation();

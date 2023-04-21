@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Auth, Hub } from "aws-amplify";
+import { Auth, Hub } from "aws-amplify";//gets info from amplify for user
 
 function useAmplifyUser() {
   const [user, setUser] = useState(null);
